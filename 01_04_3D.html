@@ -29,6 +29,8 @@
         transform: rotateY(0deg);
         transition: 1s;
         transform-style: preserve-3d;
+        /* 카드가 바깥으로 뒤짚는 느낌 내려면 시작을 어디로 하는지 정하기 */
+        transform-origin: left;
       }
 
       /* 겹쳐진 카드 요소 */
@@ -64,9 +66,13 @@
         background: red;
       }
 
-      /* 3D 마우스 오버시 카드 회전 효과 */
+      /* 3D 마우스 오버시 */
       .world:hover .card {
-        transform: rotateY(180deg);
+        /* 카드 회전 효과  */
+        /* transform: rotateY(180deg); */
+
+        /* 카드 바깥으로 뒤짚게 보이게함 180은 밑으로 뒤짚는 식으로 보임*/
+        transform: rotateY(-180deg);
       }
     </style>
   </head>
