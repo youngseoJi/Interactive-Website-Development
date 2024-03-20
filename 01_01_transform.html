@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .box-container {
+        display: flex;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        background: rgb(61, 138, 61, 0.7);
+        transition: 1s;
+      }
+      .box:hover {
+        /* transform: scale(2) rotate(15deg); */
+        /* transform: skewY(30deg); */
+        /* transform: translate(30px, 10px); */
+        /* transform: scale(1.5);
+        transform-origin: left top; 기준점 변경 */
+        transform: scale(1.5);
+        color: red;
+      }
+
+      /* transform 속성
+      * 요소의 형태를 변형시키는 데 사용됩니다. 이 속성을 통해 요소를 회전, 크기 조절, 기울이기, 이동 등 다양한 방식으로 변형시킬 수 있습니다.
+      * 크기 :scale(2)
+      * 회전: rotate(15deg)
+      * 비틀기 : skewX(30deg) 가로,  skewY(30deg)세로
+      * 이동 : translate(30px, 10px) X축, Y축 각 축에거 이동
+      * 액선발생 기준점 변경 : transform-origin: 100% 50% / px/ left top;   %를 이용하는 것이 편하다 원하는 만큼 자유롭게 변경하기 좋다.*/
+
+      /** transition 속성 
+      * 시작 상태와 끝 상태 사이의 중간 상태, 수치로 표현되는 값이 변할때 효과를 줄 수 있다.
+       * transition: 재생시간 딜레이시간 액션효과
+       * ease : 기본값, 가속도가 있는 속도
+       * linear : 일정한 속도로
+       */
+    </style>
+  </head>
+  <body>
+    <h1>Css Transform</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+      labore ab, dignissimos quod consequatur quos officia minima sit possimus,
+      omnis quibusdam reprehenderit odio praesentium culpa eveniet aliquam
+      soluta consequuntur, eum inventore impedit eos dolores dolor, porro!
+      Harum, vero, quod? Porro quia, consectetur? Esse exercitationem quas
+      pariatur hic autem quis ad quidem rem. Necessitatibus exercitationem
+      repudiandae, sequi alias eum deserunt itaque cum optio. Vitae magnam,
+      officiis iure necessitatibus, sequi quo exercitationem molestias est
+      veniam rerum facere. Distinctio ut aliquam, dolores reprehenderit
+      blanditiis magni corporis obcaecati quibusdam necessitatibus quo quasi,
+      unde quis commodi facere omnis quia perspiciatis harum ipsa nostrum.
+      Doloribus, a.
+    </p>
+    <div class="box-container">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+      labore ab, dignissimos quod consequatur quos officia minima sit possimus,
+      omnis quibusdam reprehenderit odio praesentium culpa eveniet aliquam
+      soluta consequuntur, eum inventore impedit eos dolores dolor, porro!
+      Harum, vero, quod? Porro quia, consectetur? Esse exercitationem quas
+      pariatur hic autem quis ad quidem rem. Necessitatibus exercitationem
+      repudiandae, sequi alias eum deserunt itaque cum optio. Vitae magnam,
+      officiis iure necessitatibus, sequi quo exercitationem molestias est
+      veniam rerum facere. Distinctio ut aliquam, dolores reprehenderit
+      blanditiis magni corporis obcaecati quibusdam necessitatibus quo quasi,
+      unde quis commodi facere omnis quia perspiciatis harum ipsa nostrum.
+      Doloribus, a.
+    </p>
+  </body>
+</html>
