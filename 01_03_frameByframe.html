@@ -4,9 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Web</title>
-    <style></style>
+    <style>
+      /* 시작점에서 아무런 변화 없을 경우에는 안써줘도 된다. 맨처음부터 시작되야할때! 그래서 0 또는 from을 안써줘도 된다.
+        0% = from,
+        100% = to */
+      .body {
+        background-color: black;
+      }
+      @keyframes spaceship-ani {
+        to {
+          /*종료지점 절반 길이만큼 - 해서 밀면 끝까지 이미지가 이동하게된다.*/
+          background-position: -2550px 0;
+        }
+      }
+      .spaceship {
+        width: 150px;
+        height: 150px;
+        background: url("images/sprite_spaceship.png") no-repeat 0 0 / auto
+          150px;
+        /* 백그라운드 이미지 사이즈는 /슬래쉬로 구분해준다. 가로 세로중 한변만 계산하여 쉬운 값을 절반을 나눠 넣어주고 다른 값은 auto 자동으로 비율이 맞춰주도록 하면된다.
+           /넓이, 높이 설정 */
+        animation: spaceship-ani 2s infinite steps(17);
+        /* steps(스탭 개수) 스탭별로 이미지를 보여준다. */
+      }
+    </style>
   </head>
   <body>
-    <h1></h1>
+    <h1>frame by frame</h1>
+    <!-- 전통적인 애니메이션, 이미지 스프라이트
+    이미지 고해상도를 하기위해 처음부터 2배정도 크기로 px을 만들고, css로 갖고와서 150px 우주선으로 표현을 해준다.  -->
+
+    <div class="spaceship"></div>
   </body>
 </html>
