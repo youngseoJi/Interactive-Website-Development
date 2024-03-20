@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Web</title>
+    <style>
+      .world {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 화면넓이 vw, 화면높이vh 화면을 줄이거나 늘리면 같이 변한다*/
+        width: 80vw; /* 60% of the viewport width */
+        height: 80vh; /* 60% of the viewport height */
+        background: rgb(213, 208, 208);
+
+        /* 3D 효과를 줄수있는 속성 
+        /* 눈의 시점에 따라 다르게 보이게 하고싶으면 부모에 적용 */
+        perspective: 500px;
+      }
+
+      .card {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        margin: 1em; /* 1em = 16px */
+
+        /* 변화 없는 상태도 지정해두면 성능에 좋다! 준비를 한다고함*/
+        transform: rotateY(0deg);
+        transition: 1s;
+        transform-style: preserve-3d;
+      }
+
+      /* 겹쳐진 카드 요소 */
+      .card-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 겹치기 */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5em; /* em으로 한이유? 현재 요소를 기준으로 폰트 사이즈에 비래하도록 의도한것 */
+        font-size: 1.5rem; /*rem으로 한이유? html 루트 폰트 값에 맞춰서 변화되도록 의도한것 */
+
+        backface-visibility: hidden; /* 뒷면을 안보이게 하기 위한 속성 */
+
+        /* 3D 효과를 줄수있는 속성 (카드 회전한 효과)
+        /* perspective 동일하게 3D효과를 주려면 회전시킨다. */
+        /* transform: perspective(500px) rotateY(45deg); */
+      }
+
+      /* 카드 앞면 */
+      .card-side-front {
+        z-index: 1;
+        background: white;
+      }
+
+      /* 카드 뒷면 일부러 뒤짚어놔야 보인다 */
+      .card-side-back {
+        transform: rotateY(180deg);
+        background: red;
+      }
+
+      /* 3D 마우스 오버시 카드 회전 효과 */
+      .world:hover .card {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>3D</h1>
+    <div class="world">
+      <div class="card">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+      </div>
+    </div>
+  </body>
+</html>
