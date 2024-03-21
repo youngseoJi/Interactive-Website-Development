@@ -22,21 +22,11 @@
               /* 눈의 시점에 따라 다르게 보이게 하고싶으면 부모에 적용 */
         perspective: 500px;
       }
-      /*
-            .card {
-              position: relative;
-              width: 150px;
-              height: 200px;
-              margin: 1em; /* 1em = 16px 
-
-              변화 없는 상태도 지정해두면 성능에 좋다! 준비를 한다고함
-              transform: rotateY(0deg);
-              transition: 1s;
-
+      /* 이 부분이 적용이 안되는 부분이다.     preserve-3d!!!
               preserve-3d : 3d가 적용되는 효과를 요소 레벨을 뚫고 아래요소들에 적용되도록 해주는것
               transform-style: preserve-3d;
-              transform-origin: left;
-            } 
+
+            }
             */
 
       /* 겹쳐진 카드 요소 */
@@ -45,7 +35,7 @@
         align-items: center;
         justify-content: center;
         /* 겹치기 */
-        /* position: absolute; */
+        position: absolute;
         left: 50;
         top: 50;
         width: 150px;
@@ -80,12 +70,14 @@
       }
 
       /* 3D 마우스 오버시 */
-      .world:hover .card {
-        /* 카드 회전 효과  */
+      .world:hover .card-side-front {
+        /* 카드 회전 효과  180에서 360으로*/
         transform: rotateY(180deg);
+      }
 
-        /* 카드 바깥으로 뒤짚게 보이게함 180은 밑으로 뒤짚는 식으로 보임*/
-        /* transform: rotateY(-180deg); */
+      .world:hover .card-side-back {
+        /* 카드 회전 효과  180에서 360으로*/
+        transform: rotateY(360deg);
       }
     </style>
   </head>
